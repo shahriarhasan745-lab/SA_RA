@@ -40,7 +40,6 @@ main {
               opacity 0.8s ease;
 }
 
-/* ছবির ওপর হালকা কালো ছায়া */
 .item::after {
   content: '';
   position: absolute;
@@ -48,12 +47,10 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 20px;
-  transition: background 0.8s;
 }
 
-/* ১ম ও ২য় স্লাইডটি ফুল স্ক্রিন ব্যাকগ্রাউন্ড হয়ে থাকবে */
 .item:nth-child(1),
 .item:nth-child(2) {
   left: 0;
@@ -69,17 +66,15 @@ main {
 .item:nth-child(1)::after,
 .item:nth-child(2)::after {
   border-radius: 0;
-  background: rgba(0, 0, 0, 0.5); /* ফুল স্ক্রিন ব্যাকগ্রাউন্ড একটু ডার্ক থাকবে যেন লেখা ফোটে */
+  background: rgba(0, 0, 0, 0.55);
 }
 
-/* বাকি ছবিগুলো ডানপাশে ছোট ছোট কার্ড হয়ে সাজানো থাকবে */
-.item:nth-child(3) { left: 65%; }
-.item:nth-child(4) { left: calc(65% + 220px); }
-.item:nth-child(5) { left: calc(65% + 440px); }
-.item:nth-child(6) { left: calc(65% + 660px); }
-.item:nth-child(7) { left: calc(65% + 880px); opacity: 0; }
+.item:nth-child(3) { left: 60%; }
+.item:nth-child(4) { left: calc(60% + 220px); }
+.item:nth-child(5) { left: calc(60% + 440px); }
+.item:nth-child(6) { left: calc(60% + 660px); }
+.item:nth-child(7) { left: calc(60% + 880px); opacity: 0; }
 
-/* টেক্সট বা ক্যাপশন স্টাইল */
 .content {
   position: absolute;
   top: 50%;
@@ -88,10 +83,9 @@ main {
   color: #fff;
   z-index: 10;
   display: none;
-  max-width: 500px;
+  max-width: 600px;
 }
 
-/* শুধু সায়নে থাকা বড় (২য়) ছবির টেক্সটটি শো করবে এবং অ্যানিমেশন হবে */
 .item:nth-child(2) .content {
   display: block;
 }
@@ -109,7 +103,7 @@ main {
 @keyframes showContent {
   from {
     opacity: 0;
-    transform: translate(0, 50px);
+    transform: translate(0, 40px);
     filter: blur(10px);
   }
   to {
@@ -119,7 +113,6 @@ main {
   }
 }
 
-/* বাটন নেভিগেশন স্টাইল */
 .nav {
   position: absolute;
   bottom: 50px;
@@ -137,9 +130,12 @@ main {
   color: #fff;
   cursor: pointer;
   margin-right: 15px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover {
